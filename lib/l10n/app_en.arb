@@ -28,5 +28,21 @@
   "message": "Message",
   "error": "Error",
   "tryLater": "Something went wrong, try later",
-  "save": "Save"
+  "save": "Save",
+  "price": "Price",
+  "nameProduct": "Name product",
+  "barCode": "Bar code",
+  "loading": "Loading",
+  "pleaseWait": "Please wait",
+  "success": "Successful",
+  "messageSentSuccessfully": "Message sent succesfully.",
+  "unfilledFields": "Unfilled Fields",
+  "cashRegister": "Cash Register",
+  "newProduct": "New Product",
+  "rice": "Rice",
+  "comeBack": "Come Back",
+  "products": "Products",
+  "irreversibleAction": "Irreversible action",
+  "areYouSureOfRemove": "Are you sure of remove",
+  "itemsFromInventory": "items from inventory?"
 }

@@ -27,5 +27,21 @@
   "message": "Mensaje",
   "erorr": "Error",
   "tryLater": "Hubo un error, intenta mas tarde.",
-  "save": "Guardar"
+  "save": "Guardar",
+  "price": "Precio",
+  "nameProduct": "Nombre del producto",
+  "barCode": "Codigo de barras",
+  "loading": "Cargando",
+  "pleaseWait": "Por favor espere",
+  "success": "Exito",
+  "messageSentSuccessfully": "Mensaje enviado exitosamente.",
+  "unfilledFields": "Campos sin llenar",
+  "cashRegister": "Caja Registradora",
+  "newProduct": "Producto Nuevo",
+  "rice": "Arroz",
+  "comeBack": "Volver",
+  "products": "Productos",
+  "irreversibleAction": "Acción Irreversible",
+  "areYouSureOfRemove": "¿Estas seguro de remover",
+  "itemsFromInventory": "articulos del inventario?"
 }

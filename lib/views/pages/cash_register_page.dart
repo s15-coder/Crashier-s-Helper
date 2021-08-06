@@ -33,7 +33,7 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: StaticResources.darkPuple,
-        title: Text(AppLocalizations.of(context)!.helloWorld),
+        title: Text(AppLocalizations.of(context)!.cashRegister),
         centerTitle: true,
         leading: IconButton(
           onPressed: () => Navigator.pushNamed(
@@ -74,7 +74,8 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
           productsCashRegister.selectedProducts.length == 0
               ? IconButton(
                   onPressed: () async {
-                    String barCode = await Utils().openScanBar();
+                    String barCode = await Utils()
+                        .openScanBar(AppLocalizations.of(context)!.cancel);
                     if (barCode != "-1") {
                       await addProduct(barCode);
                     }
@@ -273,7 +274,7 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
       context: context,
       tilte: AppLocalizations.of(context)!.remove,
       description:
-          "Are you sure you want remove the ${productsCashRegister.selectedProducts.length} products from the bill?",
+          "${AppLocalizations.of(context)!.areYouSureOfRemove} ${productsCashRegister.selectedProducts.length} products from the bill?",
       actionOne: ActionModel(
         onPressed: () {
           remove = false;

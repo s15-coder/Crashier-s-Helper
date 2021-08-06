@@ -101,8 +101,9 @@ class DeveloperPage extends StatelessWidget {
                       Alerts().showGenericAlert(
                           isDismissible: false,
                           context: context,
-                          tilte: "Loading",
-                          description: "Please wait...");
+                          tilte: AppLocalizations.of(context)!.loading,
+                          description:
+                              "${AppLocalizations.of(context)!.pleaseWait}...");
 
                       Map response = await ServiceApi().sendMessage(
                         email,
@@ -115,8 +116,9 @@ class DeveloperPage extends StatelessWidget {
 
                         Alerts().showGenericAlert(
                             context: context,
-                            tilte: "Successful",
-                            description: "Message sent succesfully",
+                            tilte: AppLocalizations.of(context)!.success,
+                            description: AppLocalizations.of(context)!
+                                .messageSentSuccessfully,
                             actionOne: ActionModel(
                               onPressed: () => Navigator.pop(context),
                               title: AppLocalizations.of(context)!.accept,

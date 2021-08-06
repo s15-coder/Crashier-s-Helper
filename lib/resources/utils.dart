@@ -31,9 +31,13 @@ class Utils {
     return await imagePicker.pickImage(source: ImageSource.gallery);
   }
 
-  Future<String> openScanBar() async {
+  Future<String> openScanBar(String cancelWord) async {
     return await FlutterBarcodeScanner.scanBarcode(
-        '#ff6666', 'Cancel', true, ScanMode.BARCODE);
+      '#ff6666',
+      cancelWord,
+      true,
+      ScanMode.BARCODE,
+    );
   }
 
   Future launchTo(String path) async {

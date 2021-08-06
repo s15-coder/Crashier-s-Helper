@@ -5,6 +5,7 @@ import 'package:market_scanner/resources/hive_database.dart';
 import 'package:market_scanner/resources/static_r.dart';
 import 'package:market_scanner/views/pages/set_product_page.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppBarInventory extends StatelessWidget implements PreferredSizeWidget {
   const AppBarInventory({Key? key, required this.appBar}) : super(key: key);
@@ -14,7 +15,7 @@ class AppBarInventory extends StatelessWidget implements PreferredSizeWidget {
     ProductsInventory productsInventory = Provider.of(context);
     return AppBar(
       backgroundColor: StaticResources.darkPuple,
-      title: Text('Inventory'),
+      title: Text(AppLocalizations.of(context)!.products),
       centerTitle: true,
       actions: [
         productsInventory.selectedProducts.length > 0
@@ -51,14 +52,15 @@ class AppBarInventory extends StatelessWidget implements PreferredSizeWidget {
     bool remove = false;
     await Alerts().showGenericAlert(
       context: context,
-      tilte: "Irreversible action",
-      description: "Are you sure of remove $amountItems items from inventory?",
+      tilte: AppLocalizations.of(context)!.irreversibleAction,
+      description:
+          "${AppLocalizations.of(context)!.areYouSureOfRemove} $amountItems ${AppLocalizations.of(context)!.itemsFromInventory}?",
       actionOne: ActionModel(
         onPressed: () {
           remove = false;
           Navigator.pop(context);
         },
-        title: "Cancelar",
+        title: AppLocalizations.of(context)!.cancel,
         filled: false,
       ),
       actionTwo: ActionModel(
@@ -66,7 +68,7 @@ class AppBarInventory extends StatelessWidget implements PreferredSizeWidget {
           remove = true;
           Navigator.pop(context);
         },
-        title: "Aceptar",
+        title: AppLocalizations.of(context)!.accept,
       ),
     );
     return remove;

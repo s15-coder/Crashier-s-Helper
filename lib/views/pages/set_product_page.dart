@@ -61,7 +61,7 @@ class _SetProductPageState extends State<SetProductPage> {
           backgroundColor: StaticResources.darkPuple,
           centerTitle: true,
           title: Text(arguments.pageEvent == PageEvent.Create
-              ? 'New Product'
+              ? AppLocalizations.of(context)!.newProduct
               : AppLocalizations.of(context)!.update),
           actions: [
             arguments.pageEvent == PageEvent.Update
@@ -110,7 +110,7 @@ class _SetProductPageState extends State<SetProductPage> {
       margin: EdgeInsets.symmetric(horizontal: size.width * 0.1),
       child: Row(
         children: [
-          _labelText('Bar Code:'),
+          _labelText('${AppLocalizations.of(context)!.barCode}:'),
           Expanded(
             child: Container(
                 margin: EdgeInsets.symmetric(horizontal: size.width * 0.04),
@@ -126,7 +126,8 @@ class _SetProductPageState extends State<SetProductPage> {
                     MaterialStateProperty.all<Color>(StaticResources.darkPuple),
               ),
               onPressed: () async {
-                String barcodeScanRes = await Utils().openScanBar();
+                String cancel = AppLocalizations.of(context)!.cancel;
+                String barcodeScanRes = await Utils().openScanBar(cancel);
                 print('CODE: ' + barcodeScanRes);
                 controller.text = barcodeScanRes;
               },
@@ -185,12 +186,12 @@ class _SetProductPageState extends State<SetProductPage> {
     return Container(
       width: size.width * 0.6,
       child: CustomTextField(
-        labelText: 'Name Product',
+        labelText: AppLocalizations.of(context)!.nameProduct,
         prefixIcon: Icon(
           FontAwesomeIcons.productHunt,
           color: StaticResources.darkPuple,
         ),
-        hintText: 'Rice',
+        hintText: AppLocalizations.of(context)!.rice,
         controller: controller,
       ),
     );
@@ -200,7 +201,7 @@ class _SetProductPageState extends State<SetProductPage> {
     return Container(
       width: size.width * 0.6,
       child: CustomTextField(
-        labelText: 'Price',
+        labelText: AppLocalizations.of(context)!.price,
         format: Format.toPesos,
         keyboardType: TextInputType.number,
         hintText: '2.500',
@@ -217,7 +218,9 @@ class _SetProductPageState extends State<SetProductPage> {
     return ElevatedButton(
       onPressed: onSet,
       child: Text(
-        arguments.pageEvent == PageEvent.Create ? "SAVE" : 'UPDATE',
+        arguments.pageEvent == PageEvent.Create
+            ? AppLocalizations.of(context)!.save.toUpperCase()
+            : AppLocalizations.of(context)!.update.toUpperCase(),
         style: TextStyle(fontSize: 17),
       ),
       style: ButtonStyle(
@@ -238,11 +241,11 @@ class _SetProductPageState extends State<SetProductPage> {
     } else {
       Alerts().showGenericAlert(
         context: context,
-        tilte: "Unfilled Fields",
-        description: "There are required fields unfilled.",
+        tilte: AppLocalizations.of(context)!.unfilledFields,
+        description: AppLocalizations.of(context)!.requiredFields,
         actionOne: ActionModel(
           onPressed: () => Navigator.pop(context),
-          title: 'Aceptar',
+          title: AppLocalizations.of(context)!.accept,
           filled: false,
         ),
       );
@@ -322,15 +325,15 @@ class _SetProductPageState extends State<SetProductPage> {
     await Alerts().showGenericAlert(
       isDismissible: false,
       context: context,
-      tilte: "Coming back",
+      tilte: AppLocalizations.of(context)!.comeBack,
       description:
-          "Are you sure you want to come back?\nAll changes will be lost.",
+          "${AppLocalizations.of(context)!.areYouSureComeback}\n${AppLocalizations.of(context)!.changesWillBeLost}",
       actionOne: ActionModel(
         onPressed: () {
           close = false;
           Navigator.pop(context);
         },
-        title: "Cancel",
+        title: AppLocalizations.of(context)!.cancel,
         filled: false,
       ),
       actionTwo: ActionModel(
@@ -338,7 +341,7 @@ class _SetProductPageState extends State<SetProductPage> {
           close = true;
           Navigator.pop(context);
         },
-        title: "Accept",
+        title: AppLocalizations.of(context)!.accept,
         filled: true,
       ),
     );
@@ -349,9 +352,9 @@ class _SetProductPageState extends State<SetProductPage> {
     bool save = false;
     await Alerts().showGenericAlert(
       context: context,
-      tilte:AppLocalizations.of(context)!.save,
+      tilte: AppLocalizations.of(context)!.save,
       description:
-          "Already exists a product saved with the same bar code.\n\nDo you want overwrite it?",
+          "${AppLocalizations.of(context)!.alreadyBarCodeSaved}\n\n${AppLocalizations.of(context)!.doYouWantOverwrite}",
       actionOne: ActionModel(
         onPressed: () {
           save = false;
@@ -373,9 +376,8 @@ class _SetProductPageState extends State<SetProductPage> {
     bool save = false;
     await Alerts().showGenericAlert(
       context: context,
-      tilte: "UPDATING",
-      description:
-          "Are you sure you want update the information of the product?",
+      tilte: AppLocalizations.of(context)!.update.toUpperCase(),
+      description: AppLocalizations.of(context)!.areYouSureUpdateProduct,
       actionOne: ActionModel(
         onPressed: () {
           save = false;

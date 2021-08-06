@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:market_scanner/providers/page_provider.dart';
 import 'package:market_scanner/resources/static_r.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BottomNavigatorCustom extends StatelessWidget {
   const BottomNavigatorCustom({Key? key, required this.pageController})
@@ -24,20 +25,19 @@ class BottomNavigatorCustom extends StatelessWidget {
           curve: Curves.ease,
         );
       },
-      items: getNavigatorOptions(),
+      items: getNavigatorOptions(context),
     );
   }
 }
 
-List<BottomNavigationBarItem> getNavigatorOptions() {
+List<BottomNavigationBarItem> getNavigatorOptions(BuildContext context) {
   return [
     BottomNavigationBarItem(
       icon: Icon(FontAwesomeIcons.cashRegister),
-      label: 'Cash Register',
+      label: AppLocalizations.of(context)!.cashRegister,
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.inventory),
-      label: 'Inventory',
-    ),
+        icon: Icon(Icons.inventory),
+        label: AppLocalizations.of(context)!.products),
   ];
 }
