@@ -41,20 +41,6 @@ class ProductCard extends StatelessWidget {
               ),
             ),
             traveling
-            // Container(
-            //   width: 60,
-            //   padding: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
-            //   child: Text(
-            //     id,
-            //     textAlign: TextAlign.center,
-            //     style: TextStyle(color: Colors.white),
-            //     overflow: TextOverflow.ellipsis,
-            //   ),
-            //   decoration: BoxDecoration(
-            //     color: StaticResources.darkPuple,
-            //     borderRadius: BorderRadius.circular(10),
-            //   ),
-            // ),
           ],
         ),
       ),

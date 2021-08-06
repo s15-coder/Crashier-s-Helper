@@ -11,6 +11,7 @@ import 'package:market_scanner/resources/static_r.dart';
 import 'package:market_scanner/resources/utils.dart';
 import 'package:market_scanner/views/widget/custom_textfield.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SetProductPage extends StatefulWidget {
   SetProductPage({Key? key}) : super(key: key);
@@ -61,7 +62,7 @@ class _SetProductPageState extends State<SetProductPage> {
           centerTitle: true,
           title: Text(arguments.pageEvent == PageEvent.Create
               ? 'New Product'
-              : 'Update'),
+              : AppLocalizations.of(context)!.update),
           actions: [
             arguments.pageEvent == PageEvent.Update
                 ? TextButton(
@@ -72,7 +73,7 @@ class _SetProductPageState extends State<SetProductPage> {
                       }
                     },
                     child: Text(
-                      'Cancel',
+                      AppLocalizations.of(context)!.cancel,
                       style: TextStyle(
                         color: Colors.white,
                       ),
@@ -348,7 +349,7 @@ class _SetProductPageState extends State<SetProductPage> {
     bool save = false;
     await Alerts().showGenericAlert(
       context: context,
-      tilte: "SAVING",
+      tilte:AppLocalizations.of(context)!.save,
       description:
           "Already exists a product saved with the same bar code.\n\nDo you want overwrite it?",
       actionOne: ActionModel(
@@ -357,12 +358,12 @@ class _SetProductPageState extends State<SetProductPage> {
           Navigator.pop(context);
         },
         filled: false,
-        title: "Cancel",
+        title: AppLocalizations.of(context)!.cancel,
       ),
       actionTwo: ActionModel(
         onPressed: () => save = true,
         filled: true,
-        title: "Accept",
+        title: AppLocalizations.of(context)!.accept,
       ),
     );
     return save;
@@ -381,7 +382,7 @@ class _SetProductPageState extends State<SetProductPage> {
           Navigator.pop(context);
         },
         filled: false,
-        title: "Cancel",
+        title: AppLocalizations.of(context)!.cancel,
       ),
       actionTwo: ActionModel(
         onPressed: () {
@@ -389,7 +390,7 @@ class _SetProductPageState extends State<SetProductPage> {
           Navigator.pop(context);
         },
         filled: true,
-        title: "Acept",
+        title: AppLocalizations.of(context)!.accept,
       ),
     );
     return save;

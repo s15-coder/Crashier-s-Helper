@@ -10,6 +10,7 @@ import 'package:market_scanner/views/widget/custom_textfield.dart';
 import 'package:market_scanner/views/widget/price_widget.dart';
 import 'package:market_scanner/views/widget/product_card.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CashRegisterPage extends StatefulWidget {
   const CashRegisterPage({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: StaticResources.darkPuple,
-        title: Text('Cash Register'),
+        title: Text(AppLocalizations.of(context)!.helloWorld),
         centerTitle: true,
         leading: IconButton(
           onPressed: () => Navigator.pushNamed(
@@ -182,10 +183,13 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
     } else {
       Alerts().showGenericAlert(
         context: context,
-        tilte: "Not Found",
-        description: "The product with the code $barCode has not been found.",
+        tilte: AppLocalizations.of(context)!.notFound,
+        description:
+            "${AppLocalizations.of(context)!.theProductWithTheCodeBar} $barCode ${AppLocalizations.of(context)!.hasNotBeenFound}",
         actionOne: ActionModel(
-            onPressed: () => Navigator.pop(context), title: "Accept"),
+          onPressed: () => Navigator.pop(context),
+          title: AppLocalizations.of(context)!.accept,
+        ),
       );
     }
   }
@@ -195,8 +199,8 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
     await Alerts().showGenericAlert(
       isDismissible: false,
       context: context,
-      tilte: "Insert Product",
-      description: "Insert the code bar of the product:",
+      tilte: AppLocalizations.of(context)!.insertProduct,
+      description: AppLocalizations.of(context)!.insertTheCodeBar,
       content: Column(
         children: [
           SizedBox(height: 25),
@@ -211,7 +215,7 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
           controller.text = "";
           Navigator.pop(context);
         },
-        title: "Cancel",
+        title: AppLocalizations.of(context)!.cancel,
         filled: false,
       ),
       actionTwo: ActionModel(
@@ -220,7 +224,7 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
             Navigator.pop(context);
           }
         },
-        title: "Confirmar",
+        title: AppLocalizations.of(context)!.confirm,
         filled: true,
       ),
     );
@@ -234,7 +238,7 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
     controller.text = amount.toString();
     await Alerts().showGenericAlert(
       context: context,
-      tilte: "Amount",
+      tilte: AppLocalizations.of(context)!.amount,
       content: Column(
         children: [
           SizedBox(height: 25),
@@ -245,19 +249,19 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
           )
         ],
       ),
-      description: "Select the amount of items to register:",
+      description: AppLocalizations.of(context)!.selectAmountToRegister,
       actionOne: ActionModel(
           onPressed: () {
             controller.text = "-1";
             Navigator.pop(context);
           },
-          title: "Cancel",
+          title: AppLocalizations.of(context)!.cancel,
           filled: false),
       actionTwo: ActionModel(
           onPressed: () {
             Navigator.pop(context);
           },
-          title: "Accept"),
+          title: AppLocalizations.of(context)!.accept),
     );
     if (controller.text.isEmpty) controller.text = "-1";
     return int.parse(controller.text);
@@ -267,7 +271,7 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
     bool remove = false;
     await Alerts().showGenericAlert(
       context: context,
-      tilte: "REMOVE",
+      tilte: AppLocalizations.of(context)!.remove,
       description:
           "Are you sure you want remove the ${productsCashRegister.selectedProducts.length} products from the bill?",
       actionOne: ActionModel(
@@ -284,7 +288,7 @@ class _CashRegisterPageState extends State<CashRegisterPage> {
           Navigator.pop(context);
         },
         filled: true,
-        title: "Acept",
+        title: AppLocalizations.of(context)!.accept,
       ),
     );
     return remove;

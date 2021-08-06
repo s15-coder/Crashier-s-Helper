@@ -4,10 +4,11 @@ import 'package:market_scanner/resources/alerts.dart';
 import 'package:market_scanner/resources/static_r.dart';
 import 'package:market_scanner/resources/utils.dart';
 import 'package:market_scanner/services/service_api.dart';
-import 'package:market_scanner/views/pages/beauty_divider.dart';
+import 'package:market_scanner/views/widget/beauty_divider.dart';
 import 'package:market_scanner/views/widget/custom_textfield.dart';
 import 'package:market_scanner/views/widget/social_container.dart';
 import 'package:market_scanner/views/widget/title_developer.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DeveloperPage extends StatelessWidget {
   DeveloperPage({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class DeveloperPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: StaticResources.darkPuple,
         centerTitle: true,
-        title: Text('Developer'),
+        title: Text(AppLocalizations.of(context)!.developer),
       ),
       body: Container(
         width: size.width,
@@ -70,8 +71,8 @@ class DeveloperPage extends StatelessWidget {
                     color: StaticResources.darkPuple,
                   ),
                   controller: emailController,
-                  labelText: 'Email',
-                  hintText: 'Email',
+                  labelText: AppLocalizations.of(context)!.email,
+                  hintText: AppLocalizations.of(context)!.email,
                 ),
               ),
               Container(
@@ -85,8 +86,8 @@ class DeveloperPage extends StatelessWidget {
                   keyboardType: TextInputType.multiline,
                   maxLines: 10,
                   controller: messageController,
-                  labelText: 'Message',
-                  hintText: 'Message',
+                  labelText: AppLocalizations.of(context)!.message,
+                  hintText: AppLocalizations.of(context)!.message,
                   maxLength: 350,
                   textCapitalization: TextCapitalization.sentences,
                 ),
@@ -118,17 +119,17 @@ class DeveloperPage extends StatelessWidget {
                             description: "Message sent succesfully",
                             actionOne: ActionModel(
                               onPressed: () => Navigator.pop(context),
-                              title: "Accept",
+                              title: AppLocalizations.of(context)!.accept,
                               filled: true,
                             ));
                       } else {
                         Alerts().showGenericAlert(
                             context: context,
-                            tilte: "Wrong",
-                            description: "Something went wrong, try later.",
+                            tilte: AppLocalizations.of(context)!.error,
+                            description: AppLocalizations.of(context)!.tryLater,
                             actionOne: ActionModel(
                               onPressed: () => Navigator.pop(context),
-                              title: "Accept",
+                              title: AppLocalizations.of(context)!.accept,
                               filled: true,
                             ));
                       }
@@ -136,28 +137,30 @@ class DeveloperPage extends StatelessWidget {
                     } else {
                       Alerts().showGenericAlert(
                           context: context,
-                          tilte: "Valid Email",
-                          description: "Insert a valid email",
+                          tilte: AppLocalizations.of(context)!.invalidEmail,
+                          description:
+                              AppLocalizations.of(context)!.inserValidEmail,
                           actionOne: ActionModel(
                             onPressed: () => Navigator.pop(context),
-                            title: "Accept",
+                            title: AppLocalizations.of(context)!.accept,
                             filled: true,
                           ));
                     }
                   } else {
                     Alerts().showGenericAlert(
                         context: context,
-                        tilte: "Requiered field",
-                        description: "You must fill both fields.",
+                        tilte: AppLocalizations.of(context)!.requiredFields,
+                        description:
+                            AppLocalizations.of(context)!.fillBothFields,
                         actionOne: ActionModel(
                           onPressed: () => Navigator.pop(context),
-                          title: "Accept",
+                          title: AppLocalizations.of(context)!.accept,
                           filled: true,
                         ));
                   }
                 },
                 child: Text(
-                  "Send",
+                  AppLocalizations.of(context)!.send,
                   style: TextStyle(fontSize: 19),
                 ),
                 style: ButtonStyle(
