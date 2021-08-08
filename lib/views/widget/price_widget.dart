@@ -3,6 +3,7 @@ import 'package:market_scanner/providers/products_cash_register.dart';
 import 'package:market_scanner/resources/alerts.dart';
 import 'package:market_scanner/resources/static_r.dart';
 import 'package:market_scanner/resources/utils.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PriceWidget extends StatelessWidget {
   const PriceWidget({Key? key, required this.productsCashRegister})
@@ -44,7 +45,7 @@ class PriceWidget extends StatelessWidget {
                       productsCashRegister.clearSelectedProducts();
                     }
                   },
-                  child: Text('Restore'),
+                  child: Text(AppLocalizations.of(context)!.restore),
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(StaticResources.darkPuple)),
@@ -70,8 +71,8 @@ class PriceWidget extends StatelessWidget {
     bool clear = false;
     await Alerts().showGenericAlert(
       context: context,
-      tilte: "Restore",
-      description: "Are you sure of restoring the products registered?",
+      tilte: AppLocalizations.of(context)!.restore,
+      description: AppLocalizations.of(context)!.camera,
       actionOne: ActionModel(
         onPressed: () {
           clear = false;

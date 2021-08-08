@@ -144,13 +144,6 @@ class _SetProductPageState extends State<SetProductPage> {
     );
   }
 
-  Text _labelText(String text) {
-    return Text(
-      text,
-      style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-    );
-  }
-
   Widget _imageButton(Size size, BuildContext context) {
     return GestureDetector(
       onTap: () async {
@@ -190,6 +183,7 @@ class _SetProductPageState extends State<SetProductPage> {
     return Container(
       width: size.width * 0.6,
       child: CustomTextField(
+        textCapitalization: TextCapitalization.sentences,
         labelText: AppLocalizations.of(context)!.nameProduct,
         prefixIcon: Icon(
           FontAwesomeIcons.productHunt,

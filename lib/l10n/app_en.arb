@@ -46,5 +46,8 @@
   "areYouSureOfRemove": "Are you sure of remove",
   "itemsFromInventory": "items from inventory?",
   "camera": "Camara",
-  "gallery": "Gallery"
+  "gallery": "Gallery",
+  "productsOfBill": "products from the bill?",
+  "restore": "Restore",
+  "areYouSureRemoveRegisteredProduct": "Are you sure of removing the registered products?"
 }

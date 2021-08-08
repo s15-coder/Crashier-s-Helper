@@ -14,8 +14,8 @@
   "requiredFields": "Hay campos requeridos sin llenar",
   "fillBothFields": "Debes llenar ambos campos",
   "send": "Enviar",
-  "areYouSureComeback?": "Estas seguro de volver?",
-  "changesWillBeLost?": "Todos los cambios se perderan",
+  "areYouSureComeback": "Estas seguro de volver?",
+  "changesWillBeLost": "Todos los cambios se perderan",
   "alreadyBarCodeSaved": "Existe un producto guardado con el mismo codigo de barras.",
   "doYouWantOverwrite": "¿Estas seguro de sobrescribir",
   "areYouSureUpdateProduct": "Estas seguro de actualizar la información del producto?",
@@ -24,6 +24,7 @@
   "theProductWithTheCodeBar": "El producto con el codigo de barras",
   "hasNotBeenFound": "no fue encontrado.",
   "amount": "Cantidad",
+  "email": "Email",
   "message": "Mensaje",
   "erorr": "Error",
   "tryLater": "Hubo un error, intenta mas tarde.",
@@ -45,5 +46,8 @@
   "areYouSureOfRemove": "¿Estas seguro de remover",
   "itemsFromInventory": "articulos del inventario?",
   "camera": "Camara",
-  "gallery": "Galeria"
+  "gallery": "Galeria",
+  "productsOfBill": "productos de la cuenta?",
+  "restore": "Restaurar",
+  "areYouSureRemoveRegisteredProduct": "¿Estas seguro de restaurar los productos registrados?"
 }
