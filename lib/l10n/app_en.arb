@@ -11,7 +11,7 @@
   "inserValidEmail": "Insert a valid email",
   "invalidEmail": "Invalid Email",
   "insertTheCodeBar": "Insert the code bar of the product:",
-  "requiredFields": "Required fields",
+  "requiredFields": "There are required field unfilled",
   "fillBothFields": "You must fill both fields.",
   "send": "send",
   "areYouSureComeback": "Are you sure you want to come back?",
@@ -44,5 +44,7 @@
   "products": "Products",
   "irreversibleAction": "Irreversible action",
   "areYouSureOfRemove": "Are you sure of remove",
-  "itemsFromInventory": "items from inventory?"
+  "itemsFromInventory": "items from inventory?",
+  "camera": "Camara",
+  "gallery": "Gallery"
 }

@@ -110,13 +110,17 @@ class _SetProductPageState extends State<SetProductPage> {
       margin: EdgeInsets.symmetric(horizontal: size.width * 0.1),
       child: Row(
         children: [
-          _labelText('${AppLocalizations.of(context)!.barCode}:'),
           Expanded(
             child: Container(
                 margin: EdgeInsets.symmetric(horizontal: size.width * 0.04),
                 child: CustomTextField(
+                  prefixIcon: Icon(
+                    FontAwesomeIcons.barcode,
+                    color: StaticResources.darkPuple,
+                  ),
+                  labelText: AppLocalizations.of(context)!.barCode,
                   controller: controller,
-                  hintText: '1234',
+                  hintText: AppLocalizations.of(context)!.barCode,
                   keyboardType: TextInputType.name,
                 )),
           ),
@@ -246,7 +250,7 @@ class _SetProductPageState extends State<SetProductPage> {
         actionOne: ActionModel(
           onPressed: () => Navigator.pop(context),
           title: AppLocalizations.of(context)!.accept,
-          filled: false,
+          filled: true,
         ),
       );
     }

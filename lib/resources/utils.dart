@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:market_scanner/views/widget/buttom_sheet_item.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Utils {
   static final _singleton = Utils._();
@@ -55,7 +56,7 @@ class Utils {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ButtomSheetItem(
-                  label: 'Camera',
+                  label: AppLocalizations.of(context)!.camera,
                   onPressed: () async {
                     file = await this.openCamera();
                     Navigator.pop(context);
@@ -64,7 +65,7 @@ class Utils {
                   icon: Icons.camera,
                 ),
                 ButtomSheetItem(
-                  label: 'Gallery',
+                  label: AppLocalizations.of(context)!.gallery,
                   onPressed: () async {
                     file = await this.openGallery();
                     Navigator.pop(context);

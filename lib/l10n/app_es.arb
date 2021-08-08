@@ -1,17 +1,17 @@
 {
   "helloWorld": "Hola mundo!",
   "accept": "Aceptar",
-  "cancel": "Cancel",
+  "cancel": "Cancelar",
   "product": "Product",
-  "developer": "Developer",
+  "developer": "Desarrollador",
   "remove": "Remove",
   "selectAmountToRegister": "Selecciona la cantidad de articulos a registrar",
   "confirm": "Confirmar",
-  "insertProduct": "Insertar product",
+  "insertProduct": "Insertar producto",
   "inserValidEmail": "Insertar un email valido",
   "invalidEmail": "Email invalido",
   "insertTheCodeBar": "Inserta el codigo de barras del producto",
-  "requiredFields": "Campos requeridos",
+  "requiredFields": "Hay campos requeridos sin llenar",
   "fillBothFields": "Debes llenar ambos campos",
   "send": "Enviar",
   "areYouSureComeback?": "Estas seguro de volver?",
@@ -43,5 +43,7 @@
   "products": "Productos",
   "irreversibleAction": "Acción Irreversible",
   "areYouSureOfRemove": "¿Estas seguro de remover",
-  "itemsFromInventory": "articulos del inventario?"
+  "itemsFromInventory": "articulos del inventario?",
+  "camera": "Camara",
+  "gallery": "Galeria"
 }
