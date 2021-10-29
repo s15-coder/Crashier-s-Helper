@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.crashiershelper.esteban">
    <application
-        android:label="Crashier's Helper"
+        android:label="Cashier's Helper"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

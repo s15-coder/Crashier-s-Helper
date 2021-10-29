@@ -1,16 +1,24 @@
-# market_scanner
+# Cashier's Helper 
 
-A new Flutter project.
+App thought to help thoses cashier who still don't have any a cash register to keep a control over the sells.
 
-## Getting Started
+**In the app the cashier is able to:**
+- Register, remove and update information of products like name, price and bar code.
+- Find a product according to an barcode .
+- Make a bill based on a certain amount and barcode of products.
+- Much more.
 
-This project is a starting point for a Flutter application.
+## About the app 📱
 
-A few resources to get you started if this is your first Flutter project:
+The application is built on flutter. To manage the application state is used the library [Provider](https://pub.dev/packages/provider) with the implementation of [ChangeNotifier](https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html). It has support to two languages, spanish and english. Default language spanish.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Internal storage managed throught [Hive](https://pub.dev/packages/hive).
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## To start to work in: 👨🏽‍💻
+
+1. Download the project.
+2. Run `flutter pub get` or `flutter packages get` in a command line.
+3. Run the app and enjoy.
+
+
+
