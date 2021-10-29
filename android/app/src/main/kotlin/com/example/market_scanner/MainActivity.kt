@@ -1,4 +1,4 @@
-package com.example.market_scanner
+package com.crashiershelper.esteban
 
 import io.flutter.embedding.android.FlutterActivity
 
